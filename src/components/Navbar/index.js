@@ -9,6 +9,7 @@ import {
   TextField,
 } from "react95";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const CustomAppBar = styled(AppBar)`
   bottom: 0;
@@ -43,17 +44,21 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
             >
               <ListItem>
-                <span role="img" aria-label="👨‍💻">
-                  👨‍💻
-                </span>
-                Profile
+                <Link to="/">
+                  <span role="img" aria-label="👨‍💻">
+                    👨‍💻
+                  </span>
+                  Profile
+                </Link>
               </ListItem>
-              <ListItem>
-                <span role="img" aria-label="📁">
-                  📁
-                </span>
-                My account
-              </ListItem>
+              <Link to="/projects">
+                <ListItem>
+                  <span role="img" aria-label="📁">
+                    📁
+                  </span>
+                  My account
+                </ListItem>
+              </Link>
               <Divider />
               <ListItem disabled>
                 <span role="img" aria-label="🔙">

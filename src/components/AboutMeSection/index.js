@@ -12,7 +12,6 @@ import AboutMeContent from "../AboutMeContent";
 
 const Container = styled.div`
   display: flex;
-  margin: 50px auto 0 auto;
   justify-content: center;
   width: 300px;
 `;
@@ -45,13 +44,28 @@ const AboutMeSection = () => {
           </Button>
         </CustomWindowHeader>
         <Toolbar>
-          <Button onClick={() => setMode("about")} variant="menu" size="sm">
+          <Button
+            onClick={() => setMode("about")}
+            variant="menu"
+            size="sm"
+            disabled={mode === "about"}
+          >
             About
           </Button>
-          <Button onClick={() => setMode("skills")} variant="menu" size="sm">
+          <Button
+            onClick={() => setMode("skills")}
+            variant="menu"
+            size="sm"
+            disabled={mode === "skills"}
+          >
             Skills
           </Button>
-          <Button onClick={() => setMode("contact")} variant="menu" size="sm">
+          <Button
+            onClick={() => setMode("contact")}
+            variant="menu"
+            size="sm"
+            disabled={mode === "contact"}
+          >
             Contact
           </Button>
         </Toolbar>

@@ -48,7 +48,7 @@ const Navbar = () => {
                   <span role="img" aria-label="👨‍💻">
                     👨‍💻
                   </span>
-                  Profile
+                  About
                 </Link>
               </ListItem>
               <Link to="/projects">
@@ -56,7 +56,7 @@ const Navbar = () => {
                   <span role="img" aria-label="📁">
                     📁
                   </span>
-                  My account
+                  Recent Work
                 </ListItem>
               </Link>
               <Divider />

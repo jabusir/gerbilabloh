@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Anchor } from "react95";
 
 const Container = styled.div`
   display: flex;
@@ -11,9 +12,9 @@ const ProjectWindowContent = ({ mode }) => {
       <Container>
         <p>
           This project was great and awesome to work on for photographer
-          <a href="https://www.instagram.com/wtfckjay" target="_blank">
+          <Anchor href="https://www.instagram.com/wtfckjay" target="_blank">
             @wtfckjay
-          </a>
+          </Anchor>
           . It was really cool and awesome and great. I want to do more like
           this soon.
         </p>

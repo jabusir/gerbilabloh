@@ -6,11 +6,21 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  padding: 0 15px;
+`;
+
+const HeroSection = styled.img`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 75%;
+  width: 100%;
 `;
 
 const LandingPage = () => {
   return (
     <Container>
+      <HeroSection src="/mtn.jpeg" alt="mtn" />
       <AboutMeSection />
     </Container>
   );

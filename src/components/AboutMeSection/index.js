@@ -13,7 +13,7 @@ import AboutMeContent from "../AboutMeContent";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 300px;
+  width: 400px;
 `;
 
 const CustomWindow = styled(Window)`

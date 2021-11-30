@@ -17,6 +17,11 @@ const BottomRow = styled.div`
 
 const CustomWindow = styled(Window)`
   max-width: 400px;
+  height: 400px;
+  @media (max-width: 768px) {
+    max-width: 250px;
+    height: auto;
+  }
 `;
 
 const ProjectWindow = () => {

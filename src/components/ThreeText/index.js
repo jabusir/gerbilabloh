@@ -1,54 +1,72 @@
-import { useRef } from "react";
-import { Canvas, extend, useFrame } from "@react-three/fiber";
-import { Text } from "troika-three-text";
-import styled from "styled-components";
+import React, { useRef, useState, Suspense } from "react";
+import * as THREE from "three";
+import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
+import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
+import { Canvas, useFrame, useLoader, extend } from "@react-three/fiber";
+import JSONfont from "./Roboto_Regular.json";
+import lv from "./lv.jpg";
 
-extend({ Text });
+extend({ TextGeometry });
 
-const CustomCanvas = styled(Canvas)`
-  z-index: 3;
-`;
+function TextMesh(props) {
+  const mesh = useRef();
 
-const ThreeText = () => {
-  const refMesh = useRef();
+  // actions to perform in current frame
   useFrame(() => {
-    if (refMesh.current) {
-      // rotates the object
-      refMesh.current.rotation.y += 0.01;
-    }
+    mesh.current.rotation.y += 0.01;
+    mesh.current.geometry.center();
   });
-  return (
-    <text
-      ref={refMesh}
-      fontSize={1}
-      color={"#000000"}
-      maxWidth={300}
-      lineHeight={1}
-      letterSpacing={0}
-      textAlign={"justify"}
-      materialType={"MeshBasicMaterial"}
-      text="JEJO"
-      anchorX="center"
-      anchorY="middle"
-    ></text>
-  );
-};
 
-export default () => {
+  // create lava texture
+  const lava_texture = useLoader(THREE.TextureLoader, lv);
+  lava_texture.wrapS = THREE.RepeatWrapping;
+  lava_texture.wrapT = THREE.RepeatWrapping;
+  lava_texture.repeat.set(0.05, 0.05);
+
+  // load in font
+  const font = new FontLoader().parse(JSONfont);
+
+  // configure font mesh
+  const textOptions = {
+    font,
+    size: 5,
+    height: 1,
+  };
+
+  const getTexture = () => {
+    const textureMap = {
+      lava: lava_texture,
+    };
+
+    return textureMap[props.texture];
+  };
+
   return (
-    <Canvas
-      style={{
-        position: "fixed",
-        zIndex: 1,
-        height: "300px",
-        width: "600px",
-        top: 0,
-        left: 0,
-      }}
-      pixelRatio={window.devicePixelRatio}
-    >
-      <ThreeText />
-      <pointLight position={[10, 10, 10]} />
-    </Canvas>
+    <mesh {...props} ref={mesh}>
+      <textGeometry attach="geometry" args={["jejo", textOptions]} />
+      <meshStandardMaterial attach="material" args={[{ map: getTexture() }]} />
+    </mesh>
   );
-};
+}
+
+export default function ThreeText() {
+  return (
+    <>
+      <Canvas
+        style={{
+          position: "fixed",
+          height: "300px",
+          width: "600px",
+          top: 0,
+          left: 0,
+        }}
+        camera={{ position: [0, 0, 10] }}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={1} />
+          <TextMesh position={[0, 0, 0]} texture={"lava"} />
+        </Suspense>
+      </Canvas>
+    </>
+  );
+}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import AboutMeSection from "../../components/AboutMeSection";
+import ThreeText from "../../components/ThreeText";
 
 const Container = styled.div`
   display: flex;
@@ -15,11 +16,13 @@ const HeroSection = styled.img`
   left: 0;
   height: 75%;
   width: 100%;
+  z-index: -1;
 `;
 
 const LandingPage = () => {
   return (
     <Container>
+      <ThreeText />
       <HeroSection src="/mtn.jpeg" alt="mtn" />
       <AboutMeSection />
     </Container>

@@ -44,7 +44,7 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
             >
               <ListItem>
-                <Link to="/">
+                <Link to="/about">
                   <span role="img" aria-label="👨‍💻">
                     👨‍💻
                   </span>

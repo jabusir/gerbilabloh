@@ -1,4 +1,4 @@
-import React, { useRef, useState, Suspense } from "react";
+import React, { useRef, Suspense } from "react";
 import * as THREE from "three";
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
@@ -57,8 +57,8 @@ export default function ThreeText() {
           position: "fixed",
           height: "300px",
           width: "600px",
-          top: 0,
-          left: 0,
+          top: window.innerWidth > 775 ? "6vw" : "-40px",
+          left: window.innerWidth > 775 ? "6vw" : "auto",
         }}
         camera={{ position: [0, 0, 10] }}
       >

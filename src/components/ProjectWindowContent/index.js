@@ -1,22 +1,26 @@
 import styled from "styled-components";
 import { Anchor } from "react95";
+import Socials from "../Socials";
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
 `;
 
 const ProjectWindowContent = ({ mode }) => {
   if (mode === "desc") {
     return (
       <Container>
-        <p>
-          This project was great and awesome to work on for photographer
+        <p style={{ marginBottom: "15px" }}>
+          E-commerce and gallery website done for photographer
           <Anchor href="https://www.instagram.com/wtfckjay" target="_blank">
             @wtfckjay
           </Anchor>
-          . It was really cool and awesome and great. I want to do more like
-          this soon.
+        </p>
+        <p>
+          Based out of NYC, Jay specializes in capturing key cultural figures in
+          their elements on film
         </p>
       </Container>
     );
@@ -24,13 +28,18 @@ const ProjectWindowContent = ({ mode }) => {
   if (mode === "socials") {
     return (
       <Container>
-        <p>socials</p>
+        <Socials ig="wtfckjay" twitter="wtfckjay" project={true} />
       </Container>
     );
   }
   return (
     <Container>
-      <img src="/globe.png" alt="head-bust" width="200px" />
+      <img
+        src="/globe.png"
+        alt="head-bust"
+        width="200px"
+        style={{ margin: "0 auto" }}
+      />
     </Container>
   );
 };

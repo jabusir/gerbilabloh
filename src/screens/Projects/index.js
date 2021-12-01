@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProjectWindow from "../../components/ProjectWindow";
 import TrailingProject from "../../components/TrailingProject";
+import Navbar from "../../components/Navbar";
 
 const Container = styled.div`
   display: flex;
@@ -11,11 +12,12 @@ const Container = styled.div`
   padding-bottom: 30px;
 `;
 
-const Projects = () => {
+const Projects = (props) => {
   return (
     <Container>
       <ProjectWindow />
       <TrailingProject />
+      <Navbar />
     </Container>
   );
 };

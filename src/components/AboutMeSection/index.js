@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
-import {
-  Window,
-  WindowHeader,
-  WindowContent,
-  Toolbar,
-  Button,
-  Panel,
-} from "react95";
+import { Window, WindowHeader, WindowContent, Toolbar, Button } from "react95";
 import styled from "styled-components";
 import AboutMeContent from "../AboutMeContent";
+import Socials from "../Socials";
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +18,10 @@ const CustomWindowHeader = styled(WindowHeader)`
   justify-content: space-between;
   display: flex;
   align-items: center;
+`;
+
+const CustomWindowContent = styled(WindowContent)`
+  padding: ${(props) => (props.mode === "contact" ? "0" : "16px")};
 `;
 
 const AboutMeSection = () => {
@@ -69,10 +67,10 @@ const AboutMeSection = () => {
             Contact
           </Button>
         </Toolbar>
-        <WindowContent>
+        <CustomWindowContent mode={mode}>
           <AboutMeContent mode={mode} />
-        </WindowContent>
-        <Panel variant="well">Socials</Panel>
+        </CustomWindowContent>
+        {mode !== "skills" && <Socials ig="_____jejo" twitter="jejo2hood" />}
       </CustomWindow>
     </Container>
   );

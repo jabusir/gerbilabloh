@@ -14,35 +14,53 @@ const SkillsIcons = styled.div`
   justify-content: space-evenly;
 `;
 
+const JSContainer = styled.div`
+  height: 48px;
+  display: flex;
+`;
+
 const AboutMeContent = ({ mode }) => {
   if (mode === "skills") {
     return (
       <SkillsContainer>
         <SkillsHeader>Frontend</SkillsHeader>
         <SkillsIcons>
-          <i class="fab fa-js fa-3x"></i>
+          <JSContainer>
+            <i
+              className="fab fa-js fa-3x"
+              style={{
+                color: "#f0db4f",
+                background: "#323330",
+                height: "48px",
+              }}
+            ></i>
+          </JSContainer>
+
           <img src="/ts.png" alt="TS" height="48px" width="48px" />
-          <i class="fab fa-react fa-3x"></i>
+          <i
+            className="fab fa-react fa-3x"
+            style={{ color: "#61DBFB", background: "black" }}
+          ></i>
         </SkillsIcons>
         <SkillsHeader>Backend</SkillsHeader>
         <SkillsIcons>
-          <i class="fab fa-node-js fa-3x"></i>
+          <i className="fab fa-node-js fa-3x" style={{ color: "#3c873a" }}></i>
         </SkillsIcons>
         <SkillsHeader>Dev Ops</SkillsHeader>
         <SkillsIcons>
-          <i class="fab fa-docker fa-3x"></i>
+          <i className="fab fa-docker fa-3x" style={{ color: "#0db7ed" }}></i>
         </SkillsIcons>
       </SkillsContainer>
     );
   }
   if (mode === "contact") {
-    return <p>Contact</p>;
+    return <></>;
   }
   return (
     <>
       <Text>
-        People across the www call me Jejo. I'm currently working fulltime as a
-        full stack developer at Cisco.
+        People online call me Jejo. I'm currently working fulltime as a full
+        stack developer at Cisco.
       </Text>
       <Text>
         When I'm not doing that, I'm looking for exciting ventures, communities,

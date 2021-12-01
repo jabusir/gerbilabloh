@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import AboutMeSection from "../../components/AboutMeSection";
 import ThreeText from "../../components/ThreeText";
+import Navbar from "../../components/Navbar";
 
 const Container = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const HeroSection = styled.img`
   position: fixed;
   top: 0;
   left: 0;
-  height: 75%;
+  height: 100%;
   width: 100%;
   z-index: -1;
 `;
@@ -25,6 +26,7 @@ const LandingPage = () => {
       <ThreeText />
       <HeroSection src="/mtn.jpeg" alt="mtn" />
       <AboutMeSection />
+      <Navbar />
     </Container>
   );
 };

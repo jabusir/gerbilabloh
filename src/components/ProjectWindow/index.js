@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Window,
-  WindowHeader,
-  WindowContent,
-  Toolbar,
-  Button,
-  Panel,
-} from "react95";
+import { Window, WindowHeader, WindowContent, Toolbar, Button } from "react95";
 import ProjectWindowContent from "../ProjectWindowContent";
 import styled from "styled-components";
 
@@ -19,7 +12,7 @@ const CustomWindow = styled(Window)`
   max-width: 400px;
   height: 400px;
   @media (max-width: 768px) {
-    max-width: 250px;
+    width: 80%;
     height: auto;
   }
 `;
@@ -62,7 +55,7 @@ const ProjectWindow = () => {
         <ProjectWindowContent mode={mode} />
       </WindowContent>
       <BottomRow>
-        <a href="https://www.wtfckjay.world" target="_blank">
+        <a href="https://www.wtfckjay.world" target="_blank" rel="noreferrer">
           <Button style={{ margin: "0 auto" }}>
             <span>Visit</span>
           </Button>

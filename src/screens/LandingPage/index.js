@@ -24,7 +24,7 @@ const LandingPage = () => {
   return (
     <Container>
       <ThreeText />
-      <HeroSection src="/mtn.jpeg" alt="mtn" />
+      <HeroSection src="mtn.jpg" alt="mtn" />
       <AboutMeSection />
       <Navbar />
     </Container>

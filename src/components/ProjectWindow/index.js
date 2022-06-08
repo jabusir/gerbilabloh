@@ -22,7 +22,7 @@ const ProjectWindow = () => {
 
   return (
     <CustomWindow resizable className="window">
-      <WindowHeader className="window-header">
+      {/* <WindowHeader className="window-header">
         <span>WTFCKJAY World</span>
       </WindowHeader>
       <Toolbar>
@@ -60,7 +60,7 @@ const ProjectWindow = () => {
             <span>Visit</span>
           </Button>
         </a>
-      </BottomRow>
+      </BottomRow> */}
     </CustomWindow>
   );
 };

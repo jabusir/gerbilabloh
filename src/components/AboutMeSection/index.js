@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import { Window, WindowHeader, WindowContent, Toolbar, Button } from "react95";
+import {
+  Window,
+  WindowHeader,
+  WindowContent,
+  Tabs,
+  Tab,
+  TabBody,
+  Button,
+} from "react95";
 import styled from "styled-components";
 import AboutMeContent from "../AboutMeContent";
 import Socials from "../Socials";
@@ -7,11 +15,12 @@ import Socials from "../Socials";
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  width: 400px;
+  width: 300px;
 `;
 
 const CustomWindow = styled(Window)`
   display: ${(props) => (props.closed ? "none" : "inline")};
+  width: 300px;
 `;
 
 const CustomWindowHeader = styled(WindowHeader)`
@@ -26,12 +35,14 @@ const CustomWindowContent = styled(WindowContent)`
 
 const AboutMeSection = () => {
   const [windowClosed, setWindowClosed] = useState(false);
-  const [mode, setMode] = useState("about");
+  const [mode, setMode] = useState({ activeTab: "about" });
 
   useEffect(() => {
     setWindowClosed(false);
   }, []);
 
+  const handleChange = (e, value) => setMode({ activeTab: value });
+  const { activeTab } = mode;
   return (
     <Container>
       <CustomWindow closed={windowClosed}>
@@ -41,7 +52,7 @@ const AboutMeSection = () => {
             <span>X</span>
           </Button>
         </CustomWindowHeader>
-        <Toolbar>
+        {/* <Toolbar>
           <Button
             onClick={() => setMode("about")}
             variant="menu"
@@ -66,11 +77,21 @@ const AboutMeSection = () => {
           >
             Contact
           </Button>
-        </Toolbar>
-        <CustomWindowContent mode={mode}>
-          <AboutMeContent mode={mode} />
-        </CustomWindowContent>
-        {mode !== "skills" && <Socials ig="_____jejo" twitter="jejo2hood" />}
+        </Toolbar> */}
+        <Tabs value={activeTab} onChange={handleChange}>
+          <Tab value={"about"}>About</Tab>
+          <Tab value={"skills"}>Skills</Tab>
+          <Tab value={"contact"}>Contact</Tab>
+        </Tabs>
+        {activeTab !== "contact" && (
+          <TabBody style={{ height: 300 }}>
+            <AboutMeContent mode={activeTab} />
+          </TabBody>
+        )}
+        {/* // <CustomWindowContent mode={mode}>
+        //   <AboutMeContent mode={mode} />
+        // </CustomWindowContent> */}
+        {mode !== "skills" && <Socials ig="jejo.eth" twitter="jejo2hood" />}
       </CustomWindow>
     </Container>
   );

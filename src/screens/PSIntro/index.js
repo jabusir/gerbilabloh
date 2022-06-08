@@ -155,7 +155,7 @@ const PSIntro = () => {
 
   useEffect(() => {
     play();
-    setTimeout(() => navigate("/about"), 5000);
+    setTimeout(() => navigate("/about"), 10000);
   }, [play, navigate]);
 
   return (
@@ -171,7 +171,7 @@ const PSIntro = () => {
           }}
         >
           <Dolly />
-          <ambientLight intensity={1} />
+          <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={4} />
           <spotLight position={[-10, 10, 10]} angle={-0.15} penumbra={4} />
           <pointLight position={[-10, -10, -10]} />

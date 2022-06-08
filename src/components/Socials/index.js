@@ -12,7 +12,7 @@ const CustomPanel = styled(Panel)`
   padding: 0 15px;
   display: flex;
   justify-content: space-evenly;
-  width: 200px;
+  width: 100%;
   align-items: center;
 `;
 

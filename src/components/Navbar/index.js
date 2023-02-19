@@ -27,11 +27,6 @@ const Navbar = () => {
             active={open}
             style={{ fontWeight: "bold" }}
           >
-            {/* <img
-      src={logoIMG}
-      alt='react95 logo'
-      style={{ height: '20px', marginRight: 4 }}
-    /> */}
             Start
           </Button>
           {open && (
@@ -44,21 +39,13 @@ const Navbar = () => {
               onClick={() => setOpen(false)}
             >
               <ListItem>
-                <Link to="/about">
+                <Link to="/">
                   <span role="img" aria-label="👨‍💻">
                     👨‍💻
                   </span>
                   About
                 </Link>
               </ListItem>
-              <Link to="/projects">
-                <ListItem>
-                  <span role="img" aria-label="📁">
-                    📁
-                  </span>
-                  Recent Work
-                </ListItem>
-              </Link>
               <Divider />
               <ListItem disabled>
                 <span role="img" aria-label="🔙">

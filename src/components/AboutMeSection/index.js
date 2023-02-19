@@ -1,13 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Window,
-  WindowHeader,
-  WindowContent,
-  Tabs,
-  Tab,
-  TabBody,
-  Button,
-} from "react95";
+import { Window, WindowHeader, WindowContent, Toolbar, Button } from "react95";
 import styled from "styled-components";
 import AboutMeContent from "../AboutMeContent";
 import Socials from "../Socials";
@@ -41,8 +33,6 @@ const AboutMeSection = () => {
     setWindowClosed(false);
   }, []);
 
-  const handleChange = (e, value) => setMode({ activeTab: value });
-  const { activeTab } = mode;
   return (
     <Container>
       <CustomWindow closed={windowClosed}>
@@ -52,7 +42,7 @@ const AboutMeSection = () => {
             <span>X</span>
           </Button>
         </CustomWindowHeader>
-        {/* <Toolbar>
+        <Toolbar>
           <Button
             onClick={() => setMode("about")}
             variant="menu"
@@ -62,14 +52,6 @@ const AboutMeSection = () => {
             About
           </Button>
           <Button
-            onClick={() => setMode("skills")}
-            variant="menu"
-            size="sm"
-            disabled={mode === "skills"}
-          >
-            Skills
-          </Button>
-          <Button
             onClick={() => setMode("contact")}
             variant="menu"
             size="sm"
@@ -77,20 +59,10 @@ const AboutMeSection = () => {
           >
             Contact
           </Button>
-        </Toolbar> */}
-        <Tabs value={activeTab} onChange={handleChange}>
-          <Tab value={"about"}>About</Tab>
-          <Tab value={"skills"}>Skills</Tab>
-          <Tab value={"contact"}>Contact</Tab>
-        </Tabs>
-        {activeTab !== "contact" && (
-          <TabBody style={{ height: 300 }}>
-            <AboutMeContent mode={activeTab} />
-          </TabBody>
-        )}
-        {/* // <CustomWindowContent mode={mode}>
-        //   <AboutMeContent mode={mode} />
-        // </CustomWindowContent> */}
+        </Toolbar>
+        <WindowContent>
+          <AboutMeContent mode={mode} />
+        </WindowContent>
         {mode !== "skills" && <Socials ig="jejo.eth" twitter="jejo2hood" />}
       </CustomWindow>
     </Container>

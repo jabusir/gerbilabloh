@@ -22,7 +22,14 @@ const IGContainer = styled.div`
   align-items: center;
 `;
 
+const CustomImage = styled.img`
+  max-width: 30px;
+`;
+
 const Socials = ({ ig, twitter, project }) => {
+  const handleEmailClick = () => {
+    window.location.href = "mailto:jabusir@gmail.com";
+  };
   return (
     <Container>
       <CustomPanel variant="well">
@@ -32,26 +39,16 @@ const Socials = ({ ig, twitter, project }) => {
           rel="noreferrer"
         >
           <IGContainer>
-            <i className="fab fa-instagram fa-2x"></i>
+            <CustomImage src="./assets/ig.png" />
           </IGContainer>
         </a>
-        <a
-          href={`https://twitter.com/${twitter}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="fab fa-twitter fa-2x"></i>
-        </a>
-
-        {!project && (
-          <a
-            href="https://mail.google.com/mail/u/0/?fs=1&view=cm&shva=1&su&to=jejo@gerbilabloh.com&tf=1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fas fa-envelope-square fa-2x"></i>
-          </a>
-        )}
+        <div>
+          <CustomImage
+            src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+            alt="Email"
+            onClick={handleEmailClick}
+          />
+        </div>
       </CustomPanel>
     </Container>
   );

@@ -6,10 +6,16 @@ import styled from "styled-components";
 const BottomRow = styled.div`
   display: flex;
   justify-content: center;
+  align-content: end;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const CustomWindow = styled(Window)`
   max-width: 400px;
+  position: relative;
   height: 400px;
   @media (max-width: 768px) {
     width: 80%;
@@ -17,13 +23,13 @@ const CustomWindow = styled(Window)`
   }
 `;
 
-const ProjectWindow = () => {
+const ProjectWindow = ({ title, website, projectImage, desc, socialsObj }) => {
   const [mode, setMode] = useState("intro");
 
   return (
-    <CustomWindow resizable className="window">
-      {/* <WindowHeader className="window-header">
-        <span>WTFCKJAY World</span>
+    <CustomWindow className="window">
+      <WindowHeader className="window-header">
+        <span>{title}</span>
       </WindowHeader>
       <Toolbar>
         <Button
@@ -52,15 +58,20 @@ const ProjectWindow = () => {
         </Button>
       </Toolbar>
       <WindowContent>
-        <ProjectWindowContent mode={mode} />
+        <ProjectWindowContent
+          mode={mode}
+          projectImage={projectImage}
+          desc={desc}
+          socialsObj={socialsObj}
+        />
       </WindowContent>
       <BottomRow>
-        <a href="https://www.wtfckjay.world" target="_blank" rel="noreferrer">
+        <a href={website} target="_blank" rel="noreferrer">
           <Button style={{ margin: "0 auto" }}>
             <span>Visit</span>
           </Button>
         </a>
-      </BottomRow> */}
+      </BottomRow>
     </CustomWindow>
   );
 };

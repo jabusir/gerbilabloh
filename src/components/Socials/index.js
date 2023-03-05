@@ -4,12 +4,14 @@ import "./Socials.css";
 
 const Container = styled.div`
   display: flex;
-  width: 100%;
+  width: 97%;
   justify-content: space-evenly;
+  position: absolute;
+  bottom: 4px;
 `;
 
 const CustomPanel = styled(Panel)`
-  padding: 0 15px;
+  padding: 2.5px 15px;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -26,9 +28,9 @@ const CustomImage = styled.img`
   max-width: 30px;
 `;
 
-const Socials = ({ ig, twitter, project }) => {
+const Socials = ({ ig, twitter, project, mail }) => {
   const handleEmailClick = () => {
-    window.location.href = "mailto:jabusir@gmail.com";
+    window.location.href = `mailto:${mail}`;
   };
   return (
     <Container>
@@ -42,13 +44,15 @@ const Socials = ({ ig, twitter, project }) => {
             <CustomImage src="./assets/ig.png" />
           </IGContainer>
         </a>
-        <div>
-          <CustomImage
-            src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
-            alt="Email"
-            onClick={handleEmailClick}
-          />
-        </div>
+        {mail ? (
+          <div>
+            <CustomImage
+              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              alt="Email"
+              onClick={handleEmailClick}
+            />
+          </div>
+        ) : null}
       </CustomPanel>
     </Container>
   );

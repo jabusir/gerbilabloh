@@ -4,7 +4,7 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { Canvas, useFrame, useLoader, extend } from "@react-three/fiber";
 import JSONfont from "./Roboto_Regular.json";
-import goyard from "./goyard.webp";
+import goyard from "./goyard.png";
 
 extend({ TextGeometry });
 
@@ -21,7 +21,7 @@ function TextMesh(props) {
   const lava_texture = useLoader(THREE.TextureLoader, goyard);
   lava_texture.wrapS = THREE.RepeatWrapping;
   lava_texture.wrapT = THREE.RepeatWrapping;
-  lava_texture.repeat.set(0.15, 0.15);
+  lava_texture.repeat.set(0.2, 0.2);
 
   // load in font
   const font = new FontLoader().parse(JSONfont);

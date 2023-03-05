@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+const TextContainer = styled.div`
+  height: 100%;
+`;
+
 const Text = styled.p`
   margin: 7px auto;
 `;
@@ -37,7 +41,7 @@ const AboutMeContent = ({ mode }) => {
     );
   }
   return (
-    <>
+    <TextContainer>
       <Text>
         People online call me Jejo. I'm currently working fulltime as a full
         stack developer at Cisco.
@@ -46,7 +50,7 @@ const AboutMeContent = ({ mode }) => {
         When I'm not doing that, I'm looking for exciting ventures, communities,
         and creatives to work with.
       </Text>
-    </>
+    </TextContainer>
   );
 };
 

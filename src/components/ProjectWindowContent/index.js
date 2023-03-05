@@ -8,35 +8,39 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const ProjectWindowContent = ({ mode }) => {
+const SocialsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const ProjectWindowContent = ({ mode, desc, projectImage, socialsObj }) => {
   if (mode === "desc") {
     return (
       <Container>
-        <p style={{ marginBottom: "15px" }}>
-          E-commerce and gallery website done for photographer
-          <Anchor href="https://www.instagram.com/wtfckjay" target="_blank">
-            @wtfckjay
-          </Anchor>
-        </p>
-        <p>
-          Based out of NYC, Jay specializes in capturing key cultural figures in
-          their elements on film
-        </p>
+        <p style={{ marginBottom: "15px" }}>{desc.partA} </p>
+        <p>{desc.partB}</p>
       </Container>
     );
   }
   if (mode === "socials") {
     return (
       <Container>
-        <Socials ig="wtfckjay" twitter="wtfckjay" project={true} />
+        Catch them on their site and socials
+        <SocialsContainer>
+          <Socials
+            ig={socialsObj.ig}
+            twitter={socialsObj.twitter}
+            project={true}
+          />
+        </SocialsContainer>
       </Container>
     );
   }
   return (
     <Container>
       <img
-        src="/globe.png"
-        alt="head-bust"
+        src={projectImage.src}
+        alt={projectImage.alt}
         width="200px"
         style={{ margin: "0 auto" }}
       />

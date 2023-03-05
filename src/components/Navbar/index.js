@@ -46,12 +46,20 @@ const Navbar = () => {
                   About
                 </Link>
               </ListItem>
+              <ListItem>
+                <Link to="/featured">
+                  <span role="img" aria-label="📂">
+                    📂
+                  </span>
+                  Featured Work
+                </Link>
+              </ListItem>
               <Divider />
               <ListItem disabled>
-                <span role="img" aria-label="🔙">
-                  🔙
+                <span role="img" aria-label="💡">
+                  💡
                 </span>
-                Logout
+                Answers to life's ?'s
               </ListItem>
             </List>
           )}

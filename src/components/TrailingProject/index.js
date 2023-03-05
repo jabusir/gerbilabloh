@@ -1,12 +1,14 @@
 import { Window, WindowHeader, WindowContent } from "react95";
 
 import styled from "styled-components";
+import Socials from "../Socials";
 
 const CustomWindow = styled(Window)`
   max-width: 250px;
   margin-left: 25px;
   height: 400px;
-  align-items: center;
+
+  text-align: center;
 
   @media (max-width: 768px) {
     margin-left: 0;
@@ -14,16 +16,26 @@ const CustomWindow = styled(Window)`
   }
 `;
 
+const CenterContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 80%;
+`;
+
 const TrailingProject = () => {
   return (
-    <CustomWindow resizable className="window">
+    <CustomWindow className="window">
       <WindowHeader className="window-header">
-        <span>POSSIBLY YOU???</span>
+        <span>What are you waiting for?</span>
       </WindowHeader>
-      <WindowContent>
-        If you need a web or mobile app, general software, I'm always excited to
-        hear your vision
-      </WindowContent>
+      <CenterContainer>
+        <WindowContent>
+          You have a vision. Let's make it a reality. The sooner we start, the
+          sooner you'll see results.
+        </WindowContent>
+        <Socials ig="jejo.eth" twitter="jejo2hood" mail="jabusir@gmail.com" />
+      </CenterContainer>
     </CustomWindow>
   );
 };

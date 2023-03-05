@@ -13,16 +13,13 @@ const Container = styled.div`
 const CustomWindow = styled(Window)`
   display: ${(props) => (props.closed ? "none" : "inline")};
   width: 300px;
+  padding-bottom: 45px;
 `;
 
 const CustomWindowHeader = styled(WindowHeader)`
   justify-content: space-between;
   display: flex;
   align-items: center;
-`;
-
-const CustomWindowContent = styled(WindowContent)`
-  padding: ${(props) => (props.mode === "contact" ? "0" : "16px")};
 `;
 
 const AboutMeSection = () => {
@@ -63,7 +60,9 @@ const AboutMeSection = () => {
         <WindowContent>
           <AboutMeContent mode={mode} />
         </WindowContent>
-        {mode !== "skills" && <Socials ig="jejo.eth" twitter="jejo2hood" />}
+        {mode !== "skills" && (
+          <Socials ig="jejo.eth" twitter="jejo2hood" mail="jabusir@gmail.com" />
+        )}
       </CustomWindow>
     </Container>
   );

@@ -9,6 +9,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 15px;
+  overflow: hidden;
 `;
 
 const HeroSection = styled.img`

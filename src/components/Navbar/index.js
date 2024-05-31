@@ -38,6 +38,7 @@ const Navbar = () => {
                 left: "0",
                 bottom: "100%",
                 width: "200px",
+                zIndex: 1000,
               }}
               onClick={() => setOpen(false)}
             >

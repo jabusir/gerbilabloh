@@ -54,7 +54,6 @@ const Icon = ({ index, position, onTop, setOnTop, setPositions, image }) => {
         alt={`Icon ${index + 1}`}
         style={{
           width: "100%",
-          height: "100%",
           objectFit: "cover",
         }}
       />

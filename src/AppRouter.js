@@ -11,7 +11,7 @@ const AppRouter = () => {
     <Router history={customHistory}>
       <Routes>
         <Route path="/" exact={true} element={<LandingPage />} />
-        <Route path="/images" element={<Projects />} />
+        <Route path="/images" exact={true} element={<Projects />} />
         <Route path="/videos" element={<Projects />} />
         <Route path="/audio" element={<Projects />} />
         <Route path="/info" element={<Projects />} />

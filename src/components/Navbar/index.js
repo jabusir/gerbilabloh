@@ -50,23 +50,23 @@ const Navbar = () => {
                   Home
                 </Link>
               </MenuListItem>
-              <MenuListItem>
-                <Link to="/images">
+              <Link to="/images">
+                <MenuListItem>
                   <span className="icon" role="img" aria-label="images">
                     🖼️
                   </span>
                   Images
-                </Link>
-              </MenuListItem>
+                </MenuListItem>
+              </Link>
               <Separator />
-              <MenuListItem>
-                <Link to="/videos">
+              <Link to="/videos">
+                <MenuListItem>
                   <span className="icon" role="img" aria-label="videos">
                     🎥
                   </span>
                   Videos
-                </Link>
-              </MenuListItem>
+                </MenuListItem>
+              </Link>
               <MenuListItem>
                 <Link to="/audio">
                   <span className="icon" role="img" aria-label="audio">

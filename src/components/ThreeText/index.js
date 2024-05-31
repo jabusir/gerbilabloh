@@ -4,7 +4,6 @@ import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
 import { Canvas, useFrame, useLoader, extend } from "@react-three/fiber";
 import JSONfont from "./Roboto_Regular.json";
-import goyard from "./goyard.png";
 
 extend({ TextGeometry });
 
@@ -17,12 +16,6 @@ function TextMesh(props) {
     mesh.current.geometry.center();
   });
 
-  // create lava texture
-  const lava_texture = useLoader(THREE.TextureLoader, goyard);
-  lava_texture.wrapS = THREE.RepeatWrapping;
-  lava_texture.wrapT = THREE.RepeatWrapping;
-  lava_texture.repeat.set(0.2, 0.2);
-
   // load in font
   const font = new FontLoader().parse(JSONfont);
 
@@ -33,18 +26,13 @@ function TextMesh(props) {
     height: 1,
   };
 
-  const getTexture = () => {
-    const textureMap = {
-      lava: lava_texture,
-    };
-
-    return textureMap[props.texture];
-  };
+  // Create a white material
+  const whiteMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
 
   return (
     <mesh {...props} ref={mesh}>
-      <textGeometry attach="geometry" args={["jejo", textOptions]} />
-      <meshStandardMaterial attach="material" args={[{ map: getTexture() }]} />
+      <textGeometry attach="geometry" args={["calypso", textOptions]} />
+      <meshStandardMaterial attach="material" args={[whiteMaterial]} />
     </mesh>
   );
 }
@@ -60,11 +48,11 @@ export default function ThreeText() {
           top: window.innerWidth > 775 ? "6vw" : "-40px",
           left: window.innerWidth > 775 ? "6vw" : "auto",
         }}
-        camera={{ position: [0, 0, 10] }}
+        camera={{ position: [25, 0, 10] }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={1} />
-          <TextMesh position={[0, 0, 0]} texture={"lava"} />
+          <TextMesh position={[0, 0, 0]} />
         </Suspense>
       </Canvas>
     </>

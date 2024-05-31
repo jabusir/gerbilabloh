@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import AboutMeSection from "../../components/AboutMeSection";
 import ThreeText from "../../components/ThreeText";
 import Navbar from "../../components/Navbar";
+import Icons from "../../components/Icons";
 
 const Container = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const LandingPage = () => {
     <Container>
       <ThreeText />
       <HeroSection src="mtn.jpg" alt="mtn" />
-      <AboutMeSection />
+      <Icons />
       <Navbar />
     </Container>
   );

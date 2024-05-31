@@ -3,13 +3,15 @@ import {
   AppBar,
   Toolbar,
   Button,
-  List,
-  ListItem,
-  Divider,
-  TextField,
+  MenuList,
+  MenuListItem,
+  Separator,
+  TextInput,
 } from "react95";
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const CustomAppBar = styled(AppBar)`
   bottom: 0;
@@ -30,42 +32,61 @@ const Navbar = () => {
             Start
           </Button>
           {open && (
-            <List
+            <MenuList
               style={{
                 position: "absolute",
                 left: "0",
                 bottom: "100%",
+                width: "200px",
               }}
               onClick={() => setOpen(false)}
             >
-              <ListItem>
+              <MenuListItem>
                 <Link to="/">
-                  <span role="img" aria-label="👨‍💻">
-                    👨‍💻
+                  <span className="icon" role="img" aria-label="home">
+                    🏠
                   </span>
-                  About
+                  Home
                 </Link>
-              </ListItem>
-              <ListItem>
-                <Link to="/featured">
-                  <span role="img" aria-label="📂">
-                    📂
+              </MenuListItem>
+              <MenuListItem>
+                <Link to="/images">
+                  <span className="icon" role="img" aria-label="images">
+                    🖼️
                   </span>
-                  Featured Work
+                  Images
                 </Link>
-              </ListItem>
-              <Divider />
-              <ListItem disabled>
-                <span role="img" aria-label="💡">
-                  💡
-                </span>
-                Answers to life's ?'s
-              </ListItem>
-            </List>
+              </MenuListItem>
+              <Separator />
+              <MenuListItem>
+                <Link to="/videos">
+                  <span className="icon" role="img" aria-label="videos">
+                    🎥
+                  </span>
+                  Videos
+                </Link>
+              </MenuListItem>
+              <MenuListItem>
+                <Link to="/audio">
+                  <span className="icon" role="img" aria-label="audio">
+                    🎵
+                  </span>
+                  Audio
+                </Link>
+              </MenuListItem>
+              <MenuListItem>
+                <Link to="/info">
+                  <span className="icon" role="img" aria-label="info">
+                    ℹ️
+                  </span>
+                  Info
+                </Link>
+              </MenuListItem>
+            </MenuList>
           )}
         </div>
 
-        <TextField placeholder="Search..." width={150} />
+        <TextInput placeholder="Search..." width={150} />
       </Toolbar>
     </CustomAppBar>
   );

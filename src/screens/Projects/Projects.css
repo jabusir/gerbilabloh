@@ -1,0 +1,51 @@
+.more-stories {
+  padding: 20px;
+  padding-bottom: 60px;
+  background-color: white;
+}
+
+.more-stories h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.more-stories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.more-stories li {
+  margin-bottom: 5px;
+}
+
+.more-stories a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.more-stories a:hover {
+  text-decoration: underline;
+}
+
+.more-stories .date {
+  color: #555;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .more-stories {
+    padding: 10px;
+  }
+
+  .more-stories h2 {
+    font-size: 1.2em;
+  }
+
+  .more-stories a {
+    font-size: 0.9em;
+  }
+
+  .more-stories .date {
+    font-size: 0.8em;
+  }
+}

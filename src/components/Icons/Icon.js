@@ -43,26 +43,33 @@ const Icon = ({ index, position, onTop, setOnTop, setPositions, image }) => {
         cursor: "pointer",
         width: "50px",
         height: "50px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
       }}
     >
-      <img
-        src={image}
-        alt={`Icon ${index + 1}`}
+      <div
         style={{
-          width: "100%",
-        }}
-      />
-      <p
-        style={{
-          fontSize: "12px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         }}
       >
-        {image}
-      </p>
+        <img
+          src={image}
+          alt={`Icon ${index + 1}`}
+          style={{
+            width: "100%",
+          }}
+        />
+        <p
+          style={{
+            fontSize: "12px",
+            width: "100px",
+            textAlign: "center",
+          }}
+        >
+          {image}
+        </p>
+      </div>
     </div>
   );
 };

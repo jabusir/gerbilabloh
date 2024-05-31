@@ -19,6 +19,7 @@ const HeroSection = styled.img`
   height: 100%;
   width: 100%;
   z-index: -1;
+  overflow: hidden;
 `;
 
 const LandingPage = () => {

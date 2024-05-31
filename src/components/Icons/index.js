@@ -39,7 +39,7 @@ export default function Icons() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ overflow: "hidden" }}>
       {positions.map((position, i) => (
         <Icon
           key={i}
